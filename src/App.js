@@ -1,18 +1,20 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import Home from "./pages/Home";
+import RequestPickUp from "./pages/RequestPickUp";
+import Services from "./pages/Services";
 import SharedLayOut from "./pages/SharedLayOut";
-
-const Service = () => {
-  return <div>Service</div>;
-};
 
 const App = () => {
   return (
     <React.Fragment>
       <Routes>
         <Route path="/" element={<SharedLayOut />}>
-          <Route index element={<h1>asd</h1>} />
-          <Route path="service" element={<Service />} />
+          <Route index element={<Home />} />
+          <Route path="services" element={<Services />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="request-pickup" element={<RequestPickUp />} />
         </Route>
       </Routes>
     </React.Fragment>
