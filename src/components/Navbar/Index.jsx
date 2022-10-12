@@ -14,9 +14,9 @@ const Navbar = ({ toggleSideBar }) => {
       </div>
       <NavLinks />
       <GiHamburgerMenu
+        onClick={toggleSideBar}
         size={30}
         className="hamburger"
-        onClick={toggleSideBar}
       />
     </nav>
   );

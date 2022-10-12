@@ -1,13 +1,15 @@
 import React from "react";
+
 import "../SideBar/SideBar.style.scss";
 const SideBar = ({ isOpen, toggleSideBar }) => {
+  console.log(isOpen);
   return (
-    <div
-      onClick={toggleSideBar}
-      className={isOpen ? "active sidebar" : "sidebar"}
-    >
-      SideBar
-    </div>
+    <React.Fragment>
+      <div
+        onClick={toggleSideBar}
+        className={isOpen ? "sidebar active" : "sidebar"}
+      ></div>
+    </React.Fragment>
   );
 };
 
