@@ -1,15 +1,19 @@
 import React from "react";
-
+import { GiHamburgerMenu } from "react-icons/gi";
+import NavLinks from "../Navbar/NavLinks";
 import "../SideBar/SideBar.style.scss";
+
 const SideBar = ({ isOpen, toggleSideBar }) => {
-  console.log(isOpen);
   return (
-    <React.Fragment>
-      <div
+    <div className={isOpen ? "sidebar active" : "sidebar"}>
+      <GiHamburgerMenu
         onClick={toggleSideBar}
-        className={isOpen ? "sidebar active" : "sidebar"}
-      ></div>
-    </React.Fragment>
+        size={30}
+        className="hamburger"
+        style={{ cursor: "pointer" }}
+      />
+      <NavLinks />
+    </div>
   );
 };
 

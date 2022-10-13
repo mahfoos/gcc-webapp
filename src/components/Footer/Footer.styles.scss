@@ -6,16 +6,18 @@
   left: 0;
   right: 0;
   padding: 15px 20px;
+
   .footer-container-header {
     display: grid;
-    gap: 10px;
+    gap: 5px;
+    margin: 10px 0;
     @media screen and (max-width: 768px) {
       gap: 5px;
     }
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     .footer-logo {
       width: 100%;
-      height: 60px;
+      height: 50px;
       display: flex;
       align-items: center;
 

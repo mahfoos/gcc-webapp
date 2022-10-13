@@ -12,7 +12,9 @@ const Navbar = ({ toggleSideBar }) => {
           alt="logo"
         />
       </div>
-      <NavLinks />
+      <div className="nav-right">
+        <NavLinks />
+      </div>
       <GiHamburgerMenu
         onClick={toggleSideBar}
         size={30}

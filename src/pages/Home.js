@@ -1,9 +1,12 @@
-
+import React from "react";
+import Banner from "../components/Banner/Index";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <React.Fragment>
+      <Banner />
+    </React.Fragment>
+  );
+};
 
-export default Home
+export default Home;

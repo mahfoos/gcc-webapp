@@ -6,7 +6,7 @@ const FooterCard = ({ Icon, title, subtitle }) => {
       <Icon size={27} />
       <div className="deatils" style={{ margin: "10px" }}>
         <p style={{ fontSize: "10px" }}>{title}</p>
-        <p style={{ fontSize: "12px" }}>{subtitle}</p>
+        <p style={{ fontSize: "10px", fontWeight: "600" }}>{subtitle}</p>
       </div>
     </div>
   );

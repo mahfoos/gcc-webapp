@@ -11,9 +11,6 @@ const SharedLayOut = () => {
     setIsOpen((prev) => !prev);
   };
 
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
   return (
     <React.Fragment>
       <Navbar toggleSideBar={toggleSideBar} />

@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineClockCircle, AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import "../Footer/Footer.styles.scss";
-import FooterCard from "../FooterCard";
+import FooterCard from "./FooterCard";
 const Footer = () => {
   const date = new Date().getFullYear();
   return (

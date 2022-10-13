@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import RequestPickUp from "./pages/RequestPickUp";
 import Services from "./pages/Services";
 import SharedLayOut from "./pages/SharedLayOut";
+import TrackOrder from "./pages/TrackOrder";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="services" element={<Services />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="request-pickup" element={<RequestPickUp />} />
+          <Route path="track-order" element={<TrackOrder />} />
         </Route>
       </Routes>
     </React.Fragment>

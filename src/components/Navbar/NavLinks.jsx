@@ -1,10 +1,12 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
+import Button from "../Button/Index";
+import "./NavLink.style.scss";
 
 const NavLinks = () => {
   return (
-    <div className="nav-right">
+    <React.Fragment>
       <ul className="nav-links">
         <li className="nav-link">
           <Link to="/">Home</Link>
@@ -16,8 +18,8 @@ const NavLinks = () => {
           <Link to="/about-us">About Us</Link>
         </li>
         <li className="nav-link">
-          <Link to="/request-pickup" className="btn-request-pickup">
-            request pickup
+          <Link to="/request-pickup">
+            <Button content="request pickup" type="primary" />
           </Link>
         </li>
       </ul>
@@ -28,7 +30,7 @@ const NavLinks = () => {
         />
       </div>
       <IoIosArrowDown style={{ cursor: "pointer" }} />
-    </div>
+    </React.Fragment>
   );
 };
 
