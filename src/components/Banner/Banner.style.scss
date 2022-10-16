@@ -1,27 +1,92 @@
-.banner {
+.banner-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
-  width: 100%;
-  height: calc(100vh - 190px);
-  background-position: center center, center top;
-  background-size: cover;
-  background-repeat: repeat, no-repeat;
+  justify-content: space-between;
   position: relative;
-  &::after {
-    content: "";
-    position: absolute;
 
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 200px;
-    background-image: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 100%;
+    height: calc(100vh - 180px - 70px);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 350ms linear;
+
+    opacity: 0.3;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 180px;
+      background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    color: #111;
+    background-color: #5eb2d5;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.8;
+    color: #fff;
+  }
+  .bs-arrow-right {
+    right: 15px;
+  }
+
+  .bs-arrow-left {
+    left: 15px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .bs-arrow-right,
+    .bs-arrow-left {
+      bottom: 10px;
+    }
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 25px;
+    z-index: 100;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 0 5px;
+      opacity: 0.3;
+      cursor: pointer;
+      &.active {
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+      }
+    }
   }
 }

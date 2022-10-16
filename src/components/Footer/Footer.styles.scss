@@ -1,11 +1,10 @@
 .footer-container {
   background-color: #5eb2d5;
-  position: fixed;
   width: 100%;
+  position: sticky;
   bottom: 0;
-  left: 0;
-  right: 0;
   padding: 15px 20px;
+  height: 180px;
 
   .footer-container-header {
     display: grid;
