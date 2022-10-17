@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Index";
 import Navbar from "../components/Navbar/Index";
@@ -13,7 +13,7 @@ const SharedLayOut = () => {
 
   return (
     <React.Fragment>
-      <Navbar toggleSideBar={toggleSideBar} />
+      <Navbar toggleSideBar={toggleSideBar} isOpen={isOpen} />
       <SideBar isOpen={isOpen} toggleSideBar={toggleSideBar} />
       <OverLay isOpen={isOpen} toggleSideBar={toggleSideBar} />
       <Outlet />

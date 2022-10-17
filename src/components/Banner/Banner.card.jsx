@@ -5,10 +5,10 @@ const Bannercard = () => {
   return (
     <div className="banner-card">
       <Link to="/request-pickup">
-        <Button content="Request Pick Up" type="primary" />
+        <Button margin="5px" content="Request Pick Up" type="primary" />
       </Link>
       <Link to="/track-order">
-        <Button content="Track your Order" type="secondary" />
+        <Button margin="5px" content="Track your Order" type="secondary" />
       </Link>
     </div>
   );

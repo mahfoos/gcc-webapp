@@ -1,9 +1,11 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoIosArrowDown } from "react-icons/io";
 import "../Navbar/NavBar.style.scss";
+import Profile from "../Navbar/Profile";
 import NavLinks from "./NavLinks";
 
-const Navbar = ({ toggleSideBar }) => {
+const Navbar = ({ toggleSideBar, isOpen }) => {
   return (
     <nav>
       <div className="logo">
@@ -13,7 +15,9 @@ const Navbar = ({ toggleSideBar }) => {
         />
       </div>
       <div className="nav-right">
-        <NavLinks />
+        <NavLinks className="nav-links" />
+        <Profile isOpen={isOpen} />
+        {!isOpen && <IoIosArrowDown />}
       </div>
       <GiHamburgerMenu
         onClick={toggleSideBar}

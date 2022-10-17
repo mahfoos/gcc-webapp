@@ -1,13 +1,13 @@
 import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
+
 import { Link } from "react-router-dom";
 import Button from "../Button/Index";
 import "./NavLink.style.scss";
 
-const NavLinks = () => {
+const NavLinks = ({ className }) => {
   return (
     <React.Fragment>
-      <ul className="nav-links">
+      <ul className={className}>
         <li className="nav-link">
           <Link to="/">Home</Link>
         </li>
@@ -23,13 +23,6 @@ const NavLinks = () => {
           </Link>
         </li>
       </ul>
-      <div className="profile-pic">
-        <img
-          src="https://img.freepik.com/premium-vector/express-delivery-label-courier-boy-riding-motor-bike-vector-logo_212474-453.jpg?w=2000"
-          alt=""
-        />
-      </div>
-      <IoIosArrowDown style={{ cursor: "pointer" }} />
     </React.Fragment>
   );
 };

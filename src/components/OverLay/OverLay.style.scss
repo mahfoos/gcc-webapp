@@ -1,15 +1,17 @@
 .overlay {
   position: fixed;
-
   right: 0;
   bottom: 0;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   transform: translate(-100%);
   transition: transform 350ms ease-in-out;
-  z-index: 1;
-  background-color: #c3cacd;
+  z-index: 100;
   opacity: 0.3;
+  background-color: #c3cacd;
+  cursor: pointer;
   &.active {
     transform: translate(0%);
   }

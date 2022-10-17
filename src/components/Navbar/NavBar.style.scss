@@ -5,8 +5,11 @@ nav {
   padding: 15px 20px;
   height: 70px;
   position: sticky;
+  width: 100%;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   background-color: #fff;
   @media screen and (max-width: 768px) {
     justify-content: space-between;

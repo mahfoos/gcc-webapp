@@ -1,18 +1,20 @@
 import React from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 import NavLinks from "../Navbar/NavLinks";
+import Profile from "../Navbar/Profile";
 import "../SideBar/SideBar.style.scss";
 
 const SideBar = ({ isOpen, toggleSideBar }) => {
+  console.log(isOpen);
   return (
     <div className={isOpen ? "sidebar active" : "sidebar"}>
-      <GiHamburgerMenu
-        onClick={toggleSideBar}
-        size={30}
-        className="hamburger"
-        style={{ cursor: "pointer" }}
-      />
-      <NavLinks />
+      <AiOutlineClose onClick={toggleSideBar} size={30} className="close" />
+      <div className="sidebar-links">
+        <NavLinks isOpen={isOpen} className="nav-links-sidebar" />
+        <Profile />
+
+        {isOpen && <button className="signout">signout</button>}
+      </div>
     </div>
   );
 };

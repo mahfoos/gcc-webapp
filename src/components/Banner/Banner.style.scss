@@ -11,12 +11,12 @@
     justify-content: center;
     overflow: hidden;
     min-width: 100%;
-    height: calc(100vh - 180px - 70px);
+    // height: 100vh;
+    height: calc(100vh - 250px);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     transition: all 350ms linear;
-
     opacity: 0.3;
 
     &::after {
