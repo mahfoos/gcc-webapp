@@ -6,6 +6,11 @@
 
   .nav-link {
     margin: 10px 0;
+
+    .active {
+      border-bottom: 3px solid #5eb2d5;
+      color: #5eb2d5;
+    }
   }
 }
 
@@ -16,12 +21,19 @@
 
   .nav-link {
     margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
 
     .btn-request-pickup {
       background-color: #5eb2d5;
       color: #fff;
       border-radius: 10px;
       padding: 5px;
+    }
+
+    .active {
+      border-bottom: 3px solid #5eb2d5;
+      color: #5eb2d5;
     }
   }
 }

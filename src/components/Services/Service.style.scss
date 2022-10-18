@@ -14,5 +14,20 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 600;
   }
 }
