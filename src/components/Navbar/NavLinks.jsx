@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Button from "../Button/Index";
 import "./NavLink.style.scss";
 
-const NavLinks = ({ className }) => {
+const NavLinks = ({ className, color }) => {
   return (
     <React.Fragment>
       <ul className={className}>

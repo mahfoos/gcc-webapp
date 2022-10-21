@@ -5,10 +5,10 @@ const Services = () => {
   return (
     <section
       style={{
-        padding: "15px 20px",
+        padding: "15px",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-        gap: "10px",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        gap: "15px",
       }}
     >
       {services.map((service, index) => (

@@ -1,3 +1,4 @@
+@import "../../styles/colors/global.scss";
 .nav-links-sidebar {
   display: flex;
   flex-direction: column;
@@ -8,8 +9,8 @@
     margin: 10px 0;
 
     .active {
-      border-bottom: 3px solid #5eb2d5;
-      color: #5eb2d5;
+      border-bottom: 3px solid $color-orange;
+      color: $color-orange;
     }
   }
 }
@@ -21,19 +22,11 @@
 
   .nav-link {
     margin: 0 15px;
-    font-size: 16px;
-    font-weight: bold;
-
-    .btn-request-pickup {
-      background-color: #5eb2d5;
-      color: #fff;
-      border-radius: 10px;
-      padding: 5px;
-    }
+    font-size: 13px;
 
     .active {
-      border-bottom: 3px solid #5eb2d5;
-      color: #5eb2d5;
+      border-bottom: 3px solid $color-orange;
+      color: $color-orange;
     }
   }
 }
@@ -48,6 +41,6 @@
     height: 100%;
     object-fit: contain;
     border-radius: 50%;
-    border: 3px solid #5eb2d5;
+    border: 3px solid $color-orange;
   }
 }

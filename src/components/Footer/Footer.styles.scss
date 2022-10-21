@@ -1,29 +1,38 @@
+@import "../../styles/colors/global.scss";
 .footer-container {
-  background-color: #5eb2d5;
+  background-color: $color-background;
   width: 100%;
-
+  color: $color-white;
   padding: 15px 20px;
-  height: 180px;
-
   .footer-container-header {
     display: grid;
-    gap: 5px;
-    margin: 10px 0;
-    @media screen and (max-width: 768px) {
-      gap: 5px;
-    }
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    border-bottom: 1px solid $color-border;
+    padding: 10px 0;
+
     .footer-logo {
       width: 100%;
       height: 50px;
       display: flex;
       align-items: center;
-
+      background-color: #111;
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
+  }
+
+  .footer-quick-links {
+    display: grid;
+    gap: 20px;
+    font-size: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    border-bottom: 1px solid $color-border;
+    padding: 10px 0;
+    color: #fff;
   }
 }

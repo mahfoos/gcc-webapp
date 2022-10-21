@@ -5,7 +5,6 @@ import Profile from "../Navbar/Profile";
 import "../SideBar/SideBar.style.scss";
 
 const SideBar = ({ isOpen, toggleSideBar }) => {
-  console.log(isOpen);
   return (
     <div className={isOpen ? "sidebar active" : "sidebar"}>
       <AiOutlineClose onClick={toggleSideBar} size={30} className="close" />
