@@ -1,4 +1,4 @@
-@import "../../styles/colors/global.scss";
+@import "../../styles/colors/color.scss";
 
 .service {
   width: 100%;
@@ -11,7 +11,7 @@
   cursor: pointer;
 
   &:hover {
-    border-color: $color-orange;
+    border-color: $color-primary;
   }
   .service-header {
     display: flex;

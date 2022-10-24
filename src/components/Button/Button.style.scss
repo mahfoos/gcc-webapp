@@ -1,4 +1,4 @@
-@import "../../styles/colors/global.scss";
+@import "../../styles/colors/color.scss";
 
 .btn {
   display: flex;
@@ -13,12 +13,12 @@
   border-radius: 10px;
   cursor: pointer;
   &.btn-primary {
-    background-color: $color-orange;
+    background-color: $color-primary;
     color: #fff;
     transition: background-color, color 350ms ease-in-out;
     &:hover {
       background-color: $color-white;
-      color: $color-orange;
+      color: $color-primary;
     }
   }
 
@@ -27,7 +27,7 @@
     border: 2px solid $color-black;
     &:hover {
       background-color: $color-white;
-      color: $color-orange;
+      color: $color-primary;
     }
   }
 

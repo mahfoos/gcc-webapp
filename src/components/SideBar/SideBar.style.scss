@@ -1,4 +1,4 @@
-@import "../../styles/colors/global.scss";
+@import "../../styles/colors/color.scss";
 .sidebar {
   position: fixed;
   width: 270px;
@@ -31,7 +31,7 @@
       height: 35px;
       border: none;
       outline: none;
-      background: $color-orange;
+      background: $color-primary;
       border-radius: 20px;
       font-size: 16px;
       font-weight: bold;

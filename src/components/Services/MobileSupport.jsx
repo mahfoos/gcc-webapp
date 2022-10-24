@@ -1,6 +1,6 @@
 import React from "react";
 import AppStore from "../../assets/app-store.png";
-import PlayStore from "../../assets/google-play.png";
+import PlayStore from "../../assets/get-it-on-google-play-badge.png";
 import "./MobileSupport.style.scss";
 const MobileSupport = () => {
   return (
