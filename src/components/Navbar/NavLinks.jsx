@@ -4,12 +4,13 @@ import { NavLink } from "react-router-dom";
 import Button from "../Button/Index";
 import "./NavLink.style.scss";
 
-const NavLinks = ({ className }) => {
+const NavLinks = ({ className, footer }) => {
   return (
     <React.Fragment>
       <ul className={className}>
         <li className="nav-link">
           <NavLink
+            style={footer ? { color: "white" } : undefined}
             className={({ isActive }) => (isActive ? "active" : undefined)}
             to="/"
             end
@@ -19,6 +20,7 @@ const NavLinks = ({ className }) => {
         </li>
         <li className="nav-link">
           <NavLink
+            style={footer ? { color: "white" } : undefined}
             className={({ isActive }) => (isActive ? "active" : undefined)}
             to="/services"
           >
@@ -27,6 +29,7 @@ const NavLinks = ({ className }) => {
         </li>
         <li className="nav-link">
           <NavLink
+            style={footer ? { color: "white" } : undefined}
             className={({ isActive }) => (isActive ? "active" : undefined)}
             to="/about-us"
           >
@@ -35,8 +38,15 @@ const NavLinks = ({ className }) => {
         </li>
 
         <li className="nav-link">
-          <NavLink to="/request-pickup">
-            <Button content="request pickup" type="primary" />
+          <NavLink
+            style={footer ? { color: "white" } : undefined}
+            to="/request-pickup"
+          >
+            {footer ? (
+              "request pickup"
+            ) : (
+              <Button content="request pickup" type="primary" />
+            )}
           </NavLink>
         </li>
       </ul>

@@ -1,6 +1,7 @@
-import MobileSupport from "../components/Services/MobileSupport";
-import Service from "../components/Services/Service";
+import MobileSupport from "../components/Service/MobileSupport";
+import Service from "../components/Service/Service";
 import "../styles/About.scss";
+
 const AboutUs = () => {
   return (
     <section className="about-container">

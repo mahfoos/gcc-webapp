@@ -6,7 +6,7 @@ import Header from "../components/Header/Index";
 import Navbar from "../components/Navbar/Index";
 import OverLay from "../components/OverLay/Index";
 import SideBar from "../components/SideBar/SideBar";
-const SharedLayOut = () => {
+const MainLayOut = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleSideBar = () => {
     setIsOpen((prev) => !prev);
@@ -24,4 +24,4 @@ const SharedLayOut = () => {
   );
 };
 
-export default SharedLayOut;
+export default MainLayOut;

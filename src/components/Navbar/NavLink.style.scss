@@ -12,6 +12,10 @@
       border-bottom: 3px solid $color-primary;
       color: $color-primary;
     }
+
+    .footer-active {
+      border-bottom: none;
+    }
   }
 }
 

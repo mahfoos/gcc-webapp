@@ -19,20 +19,15 @@ const Banners = ({ slides, slide, nextSlide, pervSlide, goSlide }) => {
       {slides.map((_slide, index) => {
         return (
           <React.Fragment key={index}>
-            {slide === index && (
-              <div
-                className={slide === index ? "banner active" : "banner"}
-                style={{
-                  backgroundImage: `url(${_slide.backgroundImage}) ,linear-gradient(
-                  to bottom,
-                  rgba(0, 0, 0, 1) 100%,
-                  rgba(255, 255, 255, 0) 70%
-                )`,
-                }}
-              >
-                <Bannercard />
-              </div>
-            )}
+            <div
+              className={slide === index ? "banner active" : "banner"}
+              style={{
+                backgroundImage: `url(${_slide.backgroundImage}) `,
+                transform: `translateX(-${slide * 100}%)`,
+              }}
+            >
+              <Bannercard />
+            </div>
           </React.Fragment>
         );
       })}
