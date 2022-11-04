@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <section className="about-container">
       <h1 className="about-title">
-        About <span style={{ color: "#5eb2d5" }}>GC Cargo</span>
+        About <span style={{ color: "#1a61bd" }}>GC Cargo</span>
       </h1>
       <p className="description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam distinctio
@@ -18,7 +18,7 @@ const AboutUs = () => {
       </p>
 
       <h1>
-        Why is <span style={{ color: "#5eb2d5" }}>GC Cargo</span> the best
+        Why is <span style={{ color: "#1a61bd" }}>GC Cargo</span> the best
         choice for you?
       </h1>
 

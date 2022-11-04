@@ -1,19 +1,9 @@
 @import "../../styles/colors/color.scss";
-form {
-  input {
-    outline: none;
-    border: 2px solid $color-overlay;
-    padding: 5px;
-    height: 40px;
-    width: 100%;
-    border-radius: 10px;
-    margin: 10px 0;
-    background: transparent;
-    color: $color-overlay;
-    font-size: 15px;
+@import "../../styles/input.scss";
 
-    &::placeholder {
-      color: $color-overlay;
-    }
+.input {
+  @include input($color-sky-blue);
+  &::placeholder {
+    color: $color-overlay;
   }
 }

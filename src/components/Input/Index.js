@@ -1,9 +1,12 @@
 import "./Input.styles.scss";
-const Input = ({ type, placeholder }) => {
+const Input = ({ type, placeholder, RequestPickUp, required }) => {
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
-      <input type={type} placeholder={placeholder} />
-    </form>
+    <input
+      className={RequestPickUp ? "input" : "input"}
+      placeholder={placeholder}
+      required={required}
+      type={type}
+    />
   );
 };
 

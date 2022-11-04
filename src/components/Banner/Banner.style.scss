@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     min-width: 100%;
-    height: 450px;
+    height: 80vh;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,6 +58,9 @@
   }
 
   @media screen and (max-width: 768px) {
+    .banner {
+      height: 400px;
+    }
     .bs-arrow-right,
     .bs-arrow-left {
       bottom: 10px;

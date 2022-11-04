@@ -7,7 +7,7 @@ import "../SideBar/SideBar.style.scss";
 const SideBar = ({ isOpen, toggleSideBar }) => {
   return (
     <div className={isOpen ? "sidebar active" : "sidebar"}>
-      <AiOutlineClose onClick={toggleSideBar} size={30} className="close" />
+      <AiOutlineClose onClick={toggleSideBar} size={24} className="close" />
       <div className="sidebar-links">
         <NavLinks isOpen={isOpen} className="nav-links-sidebar" />
         <Profile />

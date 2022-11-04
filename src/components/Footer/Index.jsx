@@ -32,18 +32,10 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <NavLinks footer={true} className="nav-links-sidebar" />
           </article>
-          <article className="about-us">
-            <h4>About us</h4>
-            <p>
-              Q Cargo provides local and international delivery and logistics
-              services. Our team have unique skills and rich professional
-              experience.
-            </p>
-          </article>
           <article className="subscribe">
-            <h4>Subscribe</h4>
+            <h4 style={{ margin: "10px 0" }}>Subscribe</h4>
             <Input type="email" placeholder="Email address" />
-            <p>
+            <p style={{ margin: "10px 0" }}>
               Get the latest company’s news, advice on logistics, discounts and
               more!
             </p>

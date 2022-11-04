@@ -14,12 +14,11 @@
   .mobile-support {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 600px;
-    margin: auto;
     gap: 30px;
 
     @media screen and (max-width: 768px) {
       grid-template-columns: 1fr;
+      gap: 15px;
     }
 
     .mobile-support-button {
