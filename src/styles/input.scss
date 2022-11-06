@@ -1,15 +1,12 @@
-@mixin input($border-color) {
+@mixin input($border-color, $background-color) {
   outline: none;
   border: 2px solid $border-color;
   padding: 5px 10px;
-
-  background-color: rgba(104, 182, 180, 0.137);
+  background-color: $background-color;
+  max-width: 400px;
   width: 100%;
   opacity: 0.9;
   border-radius: 10px;
-  margin: 4px 0;
-  flex: 0.6;
-
-  // color: ;
+  flex: 0.7;
   font-size: 15px;
 }
