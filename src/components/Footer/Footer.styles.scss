@@ -1,14 +1,12 @@
 @import "../../styles/colors/color.scss";
-
+@import "../../styles/global.scss";
 footer {
   width: 100%;
   background-color: $color-background;
   .footer-container {
     width: 100%;
     color: $color-white;
-    padding: 15px 20px;
-    max-width: 1300px;
-    margin: auto;
+    @include pageSize();
     .footer-container-header {
       display: grid;
       gap: 20px;

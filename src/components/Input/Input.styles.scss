@@ -2,7 +2,12 @@
 @import "../../styles/input.scss";
 
 .input {
-  @include input($color-sky-blue);
+  @include input(transparent, white);
+
+  &.active {
+    margin: 10px;
+    @include input($color-sky-blue, $input-background);
+  }
   &::placeholder {
     color: $color-overlay;
   }

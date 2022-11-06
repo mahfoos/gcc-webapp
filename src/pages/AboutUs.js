@@ -1,5 +1,6 @@
 import MobileSupport from "../components/Service/MobileSupport";
 import Service from "../components/Service/Service";
+import { services } from "../data/service.data";
 import "../styles/About.scss";
 
 const AboutUs = () => {
@@ -16,7 +17,20 @@ const AboutUs = () => {
         sapiente est illo. Odit delectus enim molestiae, eos distinctio dolorem
         debitis ab. Neque atque enim ducimus dolorum quis porro eum alias dicta
       </p>
-
+      <div className="cards">
+        <div className="card">
+          <h2>+500</h2>
+          <p>HAPPY CLIENTS</p>
+        </div>
+        <div className="card">
+          <h2>+300</h2>
+          <p>PERFECT AIR TRANSPORTATION</p>
+        </div>
+        <div className="card">
+          <h2>+50</h2>
+          <p>PERFECT AIR TRANSPORTATION</p>
+        </div>
+      </div>
       <h1>
         Why is <span style={{ color: "#1a61bd" }}>GC Cargo</span> the best
         choice for you?
@@ -24,6 +38,13 @@ const AboutUs = () => {
 
       <div className="cargo-details-container">
         <div className="services">
+          {services.map((service) => (
+            <Service
+              title="We are Reliable & Fast"
+              description="You will also be assured of timely and guranteed cargo delivery.there will be no loss and delived on promised time"
+              logo="https://www.kindpng.com/picc/m/134-1346406_transparent-background-flash-logo-png-png-download.png"
+            />
+          ))}
           <Service
             title="We are Reliable & Fast"
             description="You will also be assured of timely and guranteed cargo delivery.there will be no loss and delived on promised time"

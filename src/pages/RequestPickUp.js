@@ -18,10 +18,7 @@ const RequestPickUp = () => {
         ))}
         <div className="request-pick-up-input">
           <label>Remarks</label>
-          <textarea style={{ resize: "none" }} rows="4" cols="50">
-            At w3schools.com you will learn how to make a website. They offer
-            free tutorials in all web development technologies.
-          </textarea>
+          <textarea style={{ resize: "none" }} rows="4" cols="50" />
         </div>
 
         <Button content="submit" type="primary" />
