@@ -1,14 +1,21 @@
 .banner-card {
-  background-color: #fff;
-  height: 150px;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+  height: 150px;
+  padding: 10px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  transition: transform 550ms ease-in-out;
+  transition: transform 350ms ease-in-out;
+
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+  }
+
+  @media screen and (max-width: 300px) {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
   }
 }

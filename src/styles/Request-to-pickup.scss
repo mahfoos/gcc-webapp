@@ -1,0 +1,55 @@
+@import "../styles/input.scss";
+@import "../styles/colors/color.scss";
+
+@import "../styles/global.scss";
+.request-pick-up {
+  @include pageSize();
+
+  h2 {
+    margin: 10px 0;
+  }
+
+  .request-pick-form {
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+
+    .request-pick-up-input {
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      label {
+        margin-right: 10px;
+        font-size: 12px;
+        flex: 0.3;
+      }
+      textarea {
+        @include input($color-sky-blue, $input-background);
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .request-pick-form {
+      .request-pick-up-input {
+        min-width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .request-pick-form {
+      .request-pick-up-input {
+        min-width: 200px;
+      }
+
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+}

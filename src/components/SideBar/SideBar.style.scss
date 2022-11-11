@@ -1,3 +1,5 @@
+@import "../../styles/colors/color.scss";
+
 .sidebar {
   position: fixed;
   width: 270px;
@@ -21,8 +23,7 @@
     transform: translate(0%);
   }
   .sidebar-links {
-    margin-top: 60px;
-    width: 100%;
+    margin-top: 40px;
 
     .signout {
       margin: 10px 0;
@@ -30,7 +31,7 @@
       height: 35px;
       border: none;
       outline: none;
-      background: #5eb2d5;
+      background: $color-primary;
       border-radius: 20px;
       font-size: 16px;
       font-weight: bold;

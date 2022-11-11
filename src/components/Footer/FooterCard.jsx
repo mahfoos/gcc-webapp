@@ -1,12 +1,15 @@
 import React from "react";
+import "./Footer-card.style.scss";
 
-const FooterCard = ({ Icon, title, subtitle }) => {
+const FooterCard = ({ title, subtitle, src }) => {
   return (
-    <div className="footer-logo">
-      <Icon size={27} />
-      <div className="deatils" style={{ margin: "10px" }}>
-        <p style={{ fontSize: "10px" }}>{title}</p>
-        <p style={{ fontSize: "10px", fontWeight: "600" }}>{subtitle}</p>
+    <div className="footer-card-container">
+      <div className="image">
+        <img src={src} alt={title} />
+      </div>
+      <div className="deatils">
+        <p>{title}</p>
+        <p>{subtitle}</p>
       </div>
     </div>
   );

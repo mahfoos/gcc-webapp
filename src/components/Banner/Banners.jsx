@@ -22,11 +22,7 @@ const Banners = ({ slides, slide, nextSlide, pervSlide, goSlide }) => {
             <div
               className={slide === index ? "banner active" : "banner"}
               style={{
-                backgroundImage: `url(${_slide.backgroundImage}) ,linear-gradient(
-                  to bottom,
-                  rgba(0, 0, 0, 1) 100%,
-                  rgba(255, 255, 255, 0) 70%
-                )`,
+                backgroundImage: `url(${_slide.backgroundImage}) `,
                 transform: `translateX(-${slide * 100}%)`,
               }}
             >

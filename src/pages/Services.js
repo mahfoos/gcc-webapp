@@ -1,19 +1,24 @@
 import React from "react";
-import Service from "../components/Services/Service";
+import MobileSupport from "../components/Service/MobileSupport";
+import Service from "../components/Service/Service";
 import { services } from "../data/service.data";
+import "../styles/Service.scss";
 const Services = () => {
   return (
-    <section
-      style={{
-        padding: "15px 20px",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-        gap: "10px",
-      }}
-    >
-      {services.map((service, index) => (
-        <Service {...service} key={index} />
-      ))}
+    <section className="service-container">
+      <div
+        style={{
+          // padding: "15px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "15px",
+        }}
+      >
+        {services.map((service, index) => (
+          <Service {...service} key={index} />
+        ))}
+      </div>
+      <MobileSupport />
     </section>
   );
 };

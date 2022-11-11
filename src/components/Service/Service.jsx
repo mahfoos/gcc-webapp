@@ -4,7 +4,9 @@ const Service = ({ title, logo, description }) => {
   return (
     <div className="service">
       <div className="service-header">
-        <img src={logo} alt={title} />
+        <div className="image">
+          <img src={logo} alt={title} />
+        </div>
         <h2>{title}</h2>
       </div>
       <p>{description}</p>
