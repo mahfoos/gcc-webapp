@@ -4,7 +4,6 @@ import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import MainLayOut from "./pages/MainLayOut";
 import RequestPickUp from "./pages/RequestPickUp";
-import Services from "./pages/Services";
 
 import TrackOrder from "./pages/TrackOrder";
 

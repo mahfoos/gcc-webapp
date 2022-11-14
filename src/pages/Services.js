@@ -14,8 +14,8 @@ const Services = () => {
         style={{
           // padding: "15px",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "15px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
+          gap: "50px",
           paddingBottom: "70px",
         }}
       >

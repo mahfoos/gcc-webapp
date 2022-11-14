@@ -22,7 +22,6 @@ const NavLinks = ({ className, footer }) => {
             style={footer ? { color: "white" } : undefined}
             className={path === "/" && hash === "" ? "active" : undefined}
             to="/"
-            end
           >
             Home
           </Link>
@@ -32,7 +31,6 @@ const NavLinks = ({ className, footer }) => {
             style={footer ? { color: "white" } : undefined}
             className={hash === "#services" ? "active" : undefined}
             to="/#services"
-            end
           >
             Services
           </Link>
@@ -42,7 +40,6 @@ const NavLinks = ({ className, footer }) => {
             style={footer ? { color: "white" } : undefined}
             className={path === "/about-us" ? "active" : undefined}
             to="/about-us"
-            end
           >
             About Us
           </Link>

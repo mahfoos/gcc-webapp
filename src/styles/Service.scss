@@ -3,10 +3,10 @@
 
 .service-container {
   @include pageSize();
-  padding-top: 70px;
+  padding-top: 85px;
 
   .services-title {
-    margin: 10px 0;
+    margin: 10px 0 25px 0;
   }
 
   .cards {
