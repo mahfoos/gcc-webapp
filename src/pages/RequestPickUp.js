@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import { requestPickUpInput } from "../data/request-pickup-input";
 import "../styles/Request-to-pickup.scss";
 
 const RequestPickUp = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 })
+  }, [])
+
   return (
     <section className="request-pick-up">
       <h2>Submit Your Pick Up Request Here</h2>

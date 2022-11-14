@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
-import Logo from "../../assets/luxury_beauty_logo_mockup 1.png";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/luxury_beauty_logo_mockup 2.png";
 import "../Navbar/NavBar.style.scss";
 import Profile from "../Navbar/Profile";
 import NavLinks from "./NavLinks";
@@ -18,9 +19,11 @@ const Navbar = ({ toggleSideBar, isOpen }) => {
   return (
     <nav className={isSticky ? "navbar active" : "navbar"}>
       <div className="container">
-        <div className="logo">
-          <img src={Logo} alt="logo" />
-        </div>
+        <Link to="/">
+          <div className="logo">
+            <img src={Logo} alt="logo" />
+          </div>
+        </Link>
         <div className="nav-right">
           <NavLinks className="nav-links" />
           <Profile isOpen={isOpen} />
