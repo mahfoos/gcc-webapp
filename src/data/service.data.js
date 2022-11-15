@@ -1,9 +1,9 @@
-import icon1 from '../assets/services/services-icon-1.png'
-import icon2 from '../assets/services/services-icon-2.png'
-import icon3 from '../assets/services/services-icon-3.png'
-import icon4 from '../assets/services/services-icon-4.png'
-import icon5 from '../assets/services/services-icon-5.png'
-import icon6 from '../assets/services/services-icon-6.png'
+import icon1 from '../assets/services/services-icon-1.svg'
+import icon2 from '../assets/services/services-icon-2.svg'
+import icon3 from '../assets/services/services-icon-3.svg'
+import icon4 from '../assets/services/services-icon-4.svg'
+import icon5 from '../assets/services/services-icon-5.svg'
+import icon6 from '../assets/services/services-icon-6.svg'
 
 export const services = [
   {
