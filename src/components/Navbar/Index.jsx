@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/luxury_beauty_logo_mockup 2.png";
+import Logo from "../../assets/LOGO.png";
 import "../Navbar/NavBar.style.scss";
 import Profile from "../Navbar/Profile";
 import NavLinks from "./NavLinks";

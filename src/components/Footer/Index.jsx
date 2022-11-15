@@ -1,9 +1,8 @@
 import React from "react";
 
-import Logo from "../../assets/luxury_beauty_logo_mockup 2.png";
+import Logo from "../../assets/LOGO.png";
 import { foter_card } from "../../data/footer.card";
 import "../Footer/Footer.styles.scss";
-import Input from "../Input/Index";
 import NavLinks from "../Navbar/NavLinks";
 import FooterCard from "./FooterCard";
 const Footer = () => {
