@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import MobileSupport from "../components/Service/MobileSupport";
-import Service from "../components/Service/Service";
 import WhyGCCargo from "../components/Service/WhyGCCargo";
-import { services } from "../data/service.data";
 import "../styles/About.scss";
 
 const AboutUs = () => {

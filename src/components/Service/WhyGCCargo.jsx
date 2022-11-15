@@ -1,5 +1,4 @@
 import Service from "./Service";
-import { services } from "../../data/service.data";
 import "./WhyGCCargo.style.scss";
 import { useLocation } from "react-router-dom";
 
@@ -23,13 +22,6 @@ const WhyGCCargo = () => {
 
             <div className="cargo-details-container">
                 <div className="services">
-                    {/* {services.map((service) => (
-                        <Service
-                            title="We are Reliable & Fast"
-                            description="You will also be assured of timely and guranteed cargo delivery.there will be no loss and delived on promised time"
-                            logo={{ img: icFastReliable }}
-                        />
-                    ))} */}
                     <Service
                         title="We are Reliable & Fast"
                         logo={{ img: icFastReliable }}
