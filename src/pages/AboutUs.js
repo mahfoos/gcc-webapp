@@ -1,22 +1,33 @@
+import { useEffect } from "react";
 import MobileSupport from "../components/Service/MobileSupport";
-import Service from "../components/Service/Service";
-import { services } from "../data/service.data";
+import WhyGCCargo from "../components/Service/WhyGCCargo";
 import "../styles/About.scss";
 
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 })
+  }, [])
+
   return (
-    <section className="about-container">
+    <section className="about-container" id="about-us">
       <h1 className="about-title">
         About <span style={{ color: "#1a61bd" }}>GC Cargo</span>
       </h1>
       <p className="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam distinctio
-        esse minus consequatur ab cumque quas numquam aut, ducimus, nemo
-        dignissimos ea sunt facere molestiae culpa. Labore vitae nisi quos
-        provident unde repellendus ducimus, eaque, natus molestias et iure
-        sapiente est illo. Odit delectus enim molestiae, eos distinctio dolorem
-        debitis ab. Neque atque enim ducimus dolorum quis porro eum alias dicta
+        With the experience and the aptitude of serving, GC Cargo is the best cargo service provider in Qatar. Specializing in door-to-door, doot-to-port delivery with online tracking and online booking platform. GC Cargo functions with the highest confidence and provide a reliable, efficient and low-cost cargo services to both individuals and corporates.
       </p>
+      <p className="description">
+        With the strength of an experienced and talented team, GC Cargo maintains high service standards with the optimum levels of quality to ensure that your packages and documents are handled by professionals. With a large network, We Ships you freight to Sri Lanka, India, Pakistan, Bangladesh, Thailand, Indonesia and Nepal from Qatar.
+      </p>
+      <p className="description">
+        GC Cargo also possesses a strong background in logistics management. As a result of the trust, we have been maintaining with our corporate clients, today GC Cargo serves as the official cargo for numerous entities in Qatar.
+      </p>
+
+      <br />
+
+      <WhyGCCargo />
+      <MobileSupport />
+
       <div className="cards">
         <div className="card">
           <h2>+500</h2>
@@ -31,61 +42,7 @@ const AboutUs = () => {
           <p>PERFECT AIR TRANSPORTATION</p>
         </div>
       </div>
-      <h1>
-        Why is <span style={{ color: "#1a61bd" }}>GC Cargo</span> the best
-        choice for you?
-      </h1>
 
-      <div className="cargo-details-container">
-        <div className="services">
-          {services.map((service) => (
-            <Service
-              title="We are Reliable & Fast"
-              description="You will also be assured of timely and guranteed cargo delivery.there will be no loss and delived on promised time"
-              logo="https://www.kindpng.com/picc/m/134-1346406_transparent-background-flash-logo-png-png-download.png"
-            />
-          ))}
-          <Service
-            title="We are Reliable & Fast"
-            description="You will also be assured of timely and guranteed cargo delivery.there will be no loss and delived on promised time"
-            logo="https://www.kindpng.com/picc/m/134-1346406_transparent-background-flash-logo-png-png-download.png"
-          />
-          <Service
-            title="Competitive Pricing"
-            logo="https://www.pngitem.com/pimgs/m/168-1686702_cash-icon-image-png-icon-of-cash-transparent.png"
-            description="You only need pay for the services it require.Low cost and are affodable cargo services in Qatar"
-          />
-          <Service
-            title="24x7 Customer Service"
-            logo="https://thumbs.dreamstime.com/b/icon-white-background-arrow-vector-customer-service-logo-round-196071786.jpg"
-            description="isi quos provident underios isi quos provident underios"
-          />
-          <Service
-            title="Real Time Tracking Service"
-            logo="https://www.pngitem.com/pimgs/m/25-254151_website-clipart-world-wide-web-web-search-icon.png"
-            description="isi quos provident underios isi quos provident underios"
-          />
-          <Service
-            title="Insurance and Gurantee"
-            logo="https://assets.materialup.com/uploads/c5486af6-fb0d-419d-9f43-2760bb10ee2f/preview.jpg"
-            description="isi quos provident underios isi quos provident underios isi quos provident underios isi quos provident underios"
-          />
-          <Service
-            title="Warehouse Storage"
-            logo="https://static.vecteezy.com/system/resources/thumbnails/007/068/466/small/warehouse-factory-silhouette-logo-icon-symbol-illustration-design-vector.jpg"
-            description="isi quos provident underios isi quos provident underios"
-          />
-        </div>
-
-        <div className="cargo-shipping">
-          <img
-            src="	https://qexcargo.com/wp-content/uploads/2021/06/006.png"
-            alt="cargoimage"
-          />
-        </div>
-      </div>
-
-      <MobileSupport />
     </section>
   );
 };

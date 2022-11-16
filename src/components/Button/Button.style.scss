@@ -7,7 +7,7 @@
   outline: none;
   border: none;
   height: 35px;
-  padding: 10px;
+  padding: 10px 15px;
 
   max-width: 200px;
 
@@ -15,22 +15,26 @@
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
+
   &.btn-primary {
     background-color: $color-primary;
     color: #fff;
     transition: background-color, color 350ms ease-in-out;
+
     &:hover {
-      background-color: $color-white;
-      color: $color-primary;
+      opacity: 0.9;
     }
   }
 
   &.btn-secondary {
     background-color: $color-white;
     border: 2px solid $color-black;
+
     &:hover {
-      background-color: $color-white;
+      background-color: $color-primary;
+      background-color: rgba(26, 97, 188, .1);
       color: $color-primary;
+      border: 2px solid $color-primary;
     }
   }
 

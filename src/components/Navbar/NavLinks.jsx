@@ -1,53 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Index";
 import "./NavLink.style.scss";
 
 const NavLinks = ({ className, footer }) => {
+  const location = useLocation();
+  const [hash, setHash] = useState("");
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    setHash(location.hash);
+    setPath(location.pathname);
+  }, [location]);
+
   return (
     <React.Fragment>
       <ul className={className}>
         <li className="nav-link">
-          <NavLink
+          <Link
             style={footer ? { color: "white" } : undefined}
-            className={({ isActive }) => (isActive ? "active" : undefined)}
+            className={path === "/" && hash === "" ? "active" : undefined}
             to="/"
-            end
           >
             Home
-          </NavLink>
+          </Link>
         </li>
         <li className="nav-link">
-          <NavLink
+          <Link
             style={footer ? { color: "white" } : undefined}
-            className={({ isActive }) => (isActive ? "active" : undefined)}
-            to="/services"
+            className={hash === "#services" ? "active" : undefined}
+            to="/#services"
           >
             Services
-          </NavLink>
+          </Link>
         </li>
         <li className="nav-link">
-          <NavLink
+          <Link
             style={footer ? { color: "white" } : undefined}
-            className={({ isActive }) => (isActive ? "active" : undefined)}
+            className={path === "/about-us" ? "active" : undefined}
             to="/about-us"
           >
             About Us
-          </NavLink>
+          </Link>
         </li>
 
         <li className="nav-link">
-          <NavLink
+          <Link
             style={footer ? { color: "white" } : undefined}
             to="/request-pickup"
+            className={path === "/request-pickup" ? "active" : undefined}
           >
             {footer ? (
-              "request pickup"
+              "Request Pickup"
             ) : (
-              <Button content="request pickup" type="primary" />
+              <Button content="REQUEST PICKUP" type="primary" />
             )}
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </React.Fragment>

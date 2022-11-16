@@ -1,9 +1,8 @@
 import React from "react";
 
-import Logo from "../../assets/luxury_beauty_logo_mockup 1.png";
+import Logo from "../../assets/LOGO.png";
 import { foter_card } from "../../data/footer.card";
 import "../Footer/Footer.styles.scss";
-import Input from "../Input/Index";
 import NavLinks from "../Navbar/NavLinks";
 import FooterCard from "./FooterCard";
 const Footer = () => {
@@ -21,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="footer-quick-links">
           <article className="about-us">
-            <h4>About us</h4>
+            <h4>Mission</h4>
             <p>
               Q Cargo provides local and international delivery and logistics
               services. Our team have unique skills and rich professional
@@ -31,14 +30,6 @@ const Footer = () => {
           <article className="about-us">
             <h4>Quick Links</h4>
             <NavLinks footer={true} className="nav-links-sidebar" />
-          </article>
-          <article className="subscribe">
-            <h4 style={{ margin: "10px 0" }}>Subscribe</h4>
-            <Input type="email" placeholder="Email address" />
-            <p style={{ margin: "10px 0" }}>
-              Get the latest company’s news, advice on logistics, discounts and
-              more!
-            </p>
           </article>
         </div>
         <p

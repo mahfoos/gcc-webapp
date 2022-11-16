@@ -2,6 +2,7 @@
 @import "../styles/colors/color.scss";
 
 @import "../styles/global.scss";
+
 .request-pick-up {
   @include pageSize();
 
@@ -13,21 +14,37 @@
     display: grid;
     align-items: flex-end;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
+    gap: 25px;
 
     .request-pick-up-input {
       min-width: 300px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       label {
         margin-right: 10px;
+        margin-left: 15px;
         font-size: 12px;
         flex: 0.3;
       }
+
       textarea {
         @include input($color-sky-blue, $input-background);
       }
+    }
+
+    .request-pick-up-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0 50px 0;
+      grid-column: 2 / 4;
+
+      button {
+        padding: 15px 50px;
+      }
+      
     }
   }
 
@@ -51,5 +68,12 @@
 
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+  }
+
+  .cargo-type-select {
+    display: flex;
+    width: 100%;
+    // justify-content: center;
+    align-items: center;
   }
 }
