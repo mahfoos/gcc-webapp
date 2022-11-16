@@ -1,9 +1,9 @@
 import React from "react";
 import "./Service.style.scss";
-const Service = ({ title, logo, description }) => {
+const Service = ({ title, logo, description, location }) => {
   return (
-    <div className="service">
-      <div className="service-header">
+    <div className={location === "whyCargo" ? "service about-service" : "service"}>
+      <div className={location === "whyCargo" ? "service-header about-servie-header" : "service-header"}>
         <div className="image">
           <img src={logo.img} alt={title} />
         </div>
