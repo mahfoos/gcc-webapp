@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/LOGO.png";
 import "../Navbar/NavBar.style.scss";
-import Profile from "../Navbar/Profile";
 import NavLinks from "./NavLinks";
 
 const Navbar = ({ toggleSideBar, isOpen }) => {
@@ -26,8 +24,6 @@ const Navbar = ({ toggleSideBar, isOpen }) => {
         </Link>
         <div className="nav-right">
           <NavLinks className="nav-links" />
-          <Profile isOpen={isOpen} />
-          {!isOpen && <IoIosArrowDown />}
         </div>
         <GiHamburgerMenu
           onClick={toggleSideBar}

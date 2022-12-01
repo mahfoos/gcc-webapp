@@ -15,7 +15,7 @@ const WhyGCCargo = () => {
 
     return (
         <>
-            <h1 className={location.pathname === "/" ? "title-right" : null}>
+            <h1 className={`why-gc-title ${location.pathname === "/" ? "title-right" : null}`}>
                 Why is <span style={{ color: "#1a61bd" }}>GC Cargo</span> the best
                 choice for you?
             </h1>
