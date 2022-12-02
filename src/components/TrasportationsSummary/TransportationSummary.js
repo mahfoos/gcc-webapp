@@ -12,7 +12,10 @@ function TransportationSummary() {
     }
 
     return (
-        <ScrollTrigger onEnter={() => setShowSummary(true)}>
+        <ScrollTrigger
+            onEnter={() => setShowSummary(true)}
+            onExit={() => setShowSummary(false)}
+        >
             <div className="summary-cards">
                 <div className="card">
                     <h2>+{showSummary && <CountUp start={0} end={summary.happyClients} duration={1} delay={0} />}</h2>
