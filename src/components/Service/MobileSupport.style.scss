@@ -1,35 +1,93 @@
-.mobile-support-container {
-  text-align: center;
-  width: 100%;
+.mobile-support-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 25px 0;
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
 
-  .mobile-support-title {
-    margin: 10px 0 20px 0;
-    display: block;
-  }
-  .mobile-support {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+  .mobile-support-container {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 25px 0;
+    max-width: 1300px;
+    height: 100%;
 
-    @media screen and (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 15px;
+    img {
+      height: 405px;
+      object-fit: scale-down;
+      position: relative;
+      animation-name: MoveUpDown;
+      animation-duration: 2s;
+      z-index: -10;
+      bottom: -15px;
     }
 
-    .mobile-support-button {
-      width: 100%;
-      height: 50px;
+    @keyframes MoveUpDown {
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      0% {
+        bottom: -100px;
+        opacity: 0;
+      }
+
+      100% {
+        bottom: -15px;
+        opacity: 1;
+      }
+    }
+
+    .mobile-support-title {
+      margin: 10px 0 20px 0;
+      display: block;
+    }
+
+    .mobile-support {
+      background-color: #5fb2d4;
+      border-radius: 10px;
+      padding: 20px 80px;
+      margin-left: 100px;
+
+      h1,
+      h2 {
+        color: #fff;
+        padding: 5px;
+      }
+
+      p {
+        padding: 5px;
+      }
+
+      .download-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          object-fit: scale-down;
+          animation: none;
+          z-index: 1;
+          bottom: 0px;
+        }
+
+        .mobile-support-button {
+          img {
+            height: 50px;
+          }
+        }
+
+        .mobile-support-qr {
+          img {
+            height: 120px;
+          }
+        }
       }
     }
   }
+}
+
+.opacity0 {
+  opacity: 0;
 }

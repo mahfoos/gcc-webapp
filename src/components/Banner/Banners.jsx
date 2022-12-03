@@ -26,7 +26,7 @@ const Banners = ({ slides, slide, nextSlide, pervSlide, goSlide }) => {
                 transform: `translateX(-${slide * 100}%)`,
               }}
             >
-              <Bannercard />
+              <Bannercard slide={_slide} />
             </div>
           </React.Fragment>
         );

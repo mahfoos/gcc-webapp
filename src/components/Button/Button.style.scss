@@ -28,13 +28,11 @@
 
   &.btn-secondary {
     background-color: $color-white;
-    border: 2px solid $color-black;
+    border: 2px solid $color-white;
+    color: $color-primary;
 
     &:hover {
-      background-color: $color-primary;
-      background-color: rgba(26, 97, 188, .1);
-      color: $color-primary;
-      border: 2px solid $color-primary;
+      opacity: 0.9;
     }
   }
 

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import AboutUsImage from '../assets/about-us.jpeg'
 import MobileSupport from "../components/Service/MobileSupport";
 import WhyGCCargo from "../components/Service/WhyGCCargo";
 import TransportationSummary from "../components/TrasportationsSummary/TransportationSummary";
@@ -12,6 +13,7 @@ const AboutUs = () => {
   return (
     <>
       <section className="about-container" id="about-us">
+        <img src={AboutUsImage} className="about-img" alt="about us" />
         <h1 className="about-title">
           About <span style={{ color: "#1a61bd" }}>GC Cargo</span>
         </h1>

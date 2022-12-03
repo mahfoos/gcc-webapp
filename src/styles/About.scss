@@ -1,5 +1,12 @@
 @import "../styles/global.scss";
 @import "../styles/colors/color.scss";
+
+.about-img {
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+}
+
 .about-container {
   @include pageSize();
   color: #6e6e6e;
@@ -21,14 +28,17 @@
 
       color: #fff;
       background: $color-background;
+
       h2 {
         font-size: 16px;
       }
+
       p {
         font-size: 14px;
       }
     }
   }
+
   .about-title {
     margin: 10px 0;
     font-size: 38px;
