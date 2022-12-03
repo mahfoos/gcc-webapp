@@ -1,47 +1,55 @@
 header {
+  padding: 15px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  padding: 15px 20px;
-
-  max-width: 1300px;
-  margin: auto;
-
-  .contact-details {
+  .header__container {
     display: flex;
     align-items: center;
-    background-color: #e7e7e7;
+    justify-content: space-between;
     border-radius: 10px;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1300px;
+    background-color: #e7e7e7;
 
-    p {
-      font-size: 14px;
-      margin: 10px;
+    .contact-details {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 14px;
+        margin: 10px;
+      }
     }
-  }
 
-  .header-lists {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
+    .header-lists {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
 
-    .header-list {
-      margin: 0 15px;
+      .header-list {
+        margin: 0 15px;
 
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-        .icon {
-          color: #6e6e6e;
-          transition: transform 250ms ease-in-out;
-        }
+          .icon {
+            color: #6e6e6e;
+            transition: transform 250ms ease-in-out;
+          }
 
-        &:hover .icon {
-          color: #1a61bd;
-          transform: scale(1.1);
+          &:hover .icon {
+            color: #1a61bd;
+            transform: scale(1.1);
+          }
         }
       }
     }
@@ -50,14 +58,18 @@ header {
   @media screen and (max-width: 768px) {
     flex-direction: column;
 
-    .contact-details {
+    .header__container {
       flex-direction: column;
-      width: 100%;
 
-      p {
-        font-size: 12px;
-        margin: 10px 0;
+      .contact-details {
+        flex-direction: column;
         width: 100%;
+
+        p {
+          font-size: 12px;
+          margin: 10px 0;
+          width: 100%;
+        }
       }
     }
   }

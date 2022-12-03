@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import { Link, useLocation } from "react-router-dom";
-import Button from "../Button/Index";
 import "./NavLink.style.scss";
+import "../Button/Button.style.scss";
 
 const NavLinks = ({ className, footer }) => {
   const location = useLocation();
@@ -54,7 +54,26 @@ const NavLinks = ({ className, footer }) => {
             {footer ? (
               "Request Pickup"
             ) : (
-              <Button content="REQUEST PICKUP" type="primary" />
+              <button
+                className="nav-btn btn-primary"
+              >REQUEST PICKUP</button>
+
+            )}
+          </Link>
+        </li>
+
+        <li className="nav-link">
+          <Link
+            style={footer ? { color: "white" } : undefined}
+            to="/track-order"
+            className={path === "/track-order" ? "active" : undefined}
+          >
+            {footer ? (
+              "Track Your Order"
+            ) : (
+              <button
+                className="nav-btn btn-secondary"
+              >Track Your Order</button>
             )}
           </Link>
         </li>

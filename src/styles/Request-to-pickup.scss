@@ -37,9 +37,9 @@
     .request-pick-up-submit {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       margin: 10px 0 50px 0;
-      grid-column: 2 / 4;
+      grid-column: 3 / 4;
 
       button {
         padding: 15px 50px;

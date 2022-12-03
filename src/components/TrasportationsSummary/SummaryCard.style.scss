@@ -1,0 +1,22 @@
+@import "../../styles/colors/color.scss";
+.summary-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: $color-background;
+    color: #fff;
+
+    .card {
+        text-align: center;
+        margin: 15px 0px;
+        padding: 10px 5px;
+
+        h2 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
