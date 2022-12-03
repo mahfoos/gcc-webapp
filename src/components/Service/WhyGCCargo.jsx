@@ -2,12 +2,12 @@ import Service from "./Service";
 import "./WhyGCCargo.style.scss";
 import { useLocation } from "react-router-dom";
 
-import icFastReliable from "../../assets/whyGC/RELIABLE & FAST.svg"
-import icCustomer from "../../assets/whyGC/24X7 CUSTOMER SERVICE.svg"
-import icCompetitive from "../../assets/whyGC/COMPETITIVE PRICING.svg"
-import icInsurance from "../../assets/whyGC/INSURANCE AND GURANTEE.svg"
-import icTimeTracking from "../../assets/whyGC/REAL TIME TRACKING SERVICE.svg"
-import icWarehouse from "../../assets/whyGC/WAREHOUSE STORAGE.svg"
+import icFastReliable from "../../assets/whyGC/RELIABLE & FAST.png"
+import icCustomer from "../../assets/whyGC/24X7 CUSTOMER SERVICE.png"
+import icCompetitive from "../../assets/whyGC/COMPETITIVE PRICING.png"
+import icInsurance from "../../assets/whyGC/INSURANCE AND GURANTEE.png"
+import icTimeTracking from "../../assets/whyGC/REAL TIME TRACKING SERVICE.png"
+import icWarehouse from "../../assets/whyGC/WAREHOUSE STORAGE.png"
 import cargoPerson from "../../assets/whyGC/cargoPerson.png"
 
 const WhyGCCargo = () => {
