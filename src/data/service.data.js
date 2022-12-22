@@ -11,35 +11,35 @@ export const services = [
     logo: { img: icon2 },
     title: "Air Door to Air Door",
     description:
-      "Air cargo door service available in q cargo services. Per kg 11Qr and delivery period is 10-15 Days",
+      "We provide Air Door-to-Door cargo arrangement where your goods is picked up at the door and delivered to the recipient's door at the promised time",
   },
   {
     logo: { img: icon1 },
     title: "Sea Door to Door",
     description:
-      "Sea cargo door to door service is available in q cargo. 50x50x70 Box with 60kg With free box 280 Qr Only. Delivery Period is 40-50 Days",
+      "We provide a Sea Door-to-Door cargo arrangement where your goods is picked up at the door and delivered to the recipient's door at the promised time",
   },
   {
     logo: { img: icon3 },
     title: "Air/Sea Port to Port",
-    description: "We ship your goods from port to port by Sea/Air",
+    description: "We provide the most economical low cost port-to-port shipping service worldwide. We deliver your goods to any of our designated ports or terminals",
   },
   {
     logo: { img: icon4 },
     title: "logistic",
     description:
-      "We provide professional logistics services. Our trucks are reliable and fast – you will get your shipment in time.",
+      "We provide professional logistics services. Our trucks are reliable and fast – you will get your shipment in time",
   },
   {
     logo: { img: icon5 },
     title: "warehouse",
     description:
-      "You can use our service of goods storage according to your needs so your shipments will be in safe.",
+      "We provide professional Warehousing services. we store your goods according to your needs and your shipments always be in safe",
   },
   {
     logo: { img: icon6 },
     title: "cargo Insurance",
     description:
-      "We ensure protection of cargo from any damage during shipping, whether by land, sea or air.",
+      "Our Cargo Policy insures your goods while in transit against loss from associated risks",
   },
 ];
