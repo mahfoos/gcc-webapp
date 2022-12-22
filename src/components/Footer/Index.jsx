@@ -20,11 +20,9 @@ const Footer = () => {
         </div>
         <div className="footer-quick-links">
           <article className="about-us">
-            <h4>Mission</h4>
+            <h4>About Us</h4>
             <p>
-              Q Cargo provides local and international delivery and logistics
-              services. Our team have unique skills and rich professional
-              experience.
+              GC Cargo is the best cargo service provider in Qatar. Specializing in door-to-door, doot-to-port delivery with online tracking and online booking platform. GC Cargo functions with the highest confidence and provide a reliable, efficient and low-cost cargo services to both individuals and corporates.
             </p>
           </article>
           <article className="about-us">

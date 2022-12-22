@@ -16,7 +16,7 @@ const Header = () => {
             Phone: Qatar (5000 41 78 | 5000 41 76) UAE (052 7450 800 , 052 7385
             800)
           </p>
-          <p>E-mail: admin@qexcargo.com</p>
+          <p>E-mail: info@newgccargo.com</p>
         </div>
 
         <ul className="header-lists">

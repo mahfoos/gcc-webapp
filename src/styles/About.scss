@@ -9,7 +9,7 @@
 
 .about-container {
   @include pageSize();
-  color: #6e6e6e;
+  color: black;
 
   .cards {
     display: grid;
