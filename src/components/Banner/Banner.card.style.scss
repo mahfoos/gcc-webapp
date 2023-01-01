@@ -1,4 +1,5 @@
 .banner-card {
+  display: flex;
   margin-top: 5%;
   margin-left: 10%;
   padding: 10px;
@@ -12,14 +13,51 @@
 
   p {
     font-size: 20px;
-    width: 35%;
+    width: 60%;
+    min-height: 82px;
   }
 
   .banner-card-btn {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 50px;
+    margin-top: 30px;
+  }
+
+  .card-right {
+    padding-top: 65px;
+    text-align: center;
+
+    p {
+      width: 100%;
+      margin: 30px 0;
+      font-size: 18px;
+    }
+
+    .download-icons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 30px;
+
+      img {
+        width: 100%;
+        object-fit: scale-down;
+      }
+
+      .mobile-support-button {
+        img {
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+
+      .mobile-support-qr {
+        img {
+          height: 120px;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 300px) {
