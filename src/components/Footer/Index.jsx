@@ -1,6 +1,6 @@
 import React from "react";
 
-import Logo from "../../assets/LOGO.png";
+import Logo from "../../assets/LOGO.webp";
 import { foter_card } from "../../data/footer.card";
 import "../Footer/Footer.styles.scss";
 import NavLinks from "../Navbar/NavLinks";

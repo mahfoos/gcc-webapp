@@ -8,7 +8,7 @@ import icCompetitive from "../../assets/whyGC/COMPETITIVE PRICING.png"
 import icInsurance from "../../assets/whyGC/INSURANCE AND GURANTEE.png"
 import icTimeTracking from "../../assets/whyGC/REAL TIME TRACKING SERVICE.png"
 import icWarehouse from "../../assets/whyGC/WAREHOUSE STORAGE.png"
-import cargoPerson from "../../assets/whyGC/cargoPerson.png"
+import cargoPerson from "../../assets/whyGC/cargoPerson.webp"
 
 const WhyGCCargo = () => {
     const location = useLocation();
