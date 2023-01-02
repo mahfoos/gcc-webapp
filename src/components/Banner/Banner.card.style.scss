@@ -60,6 +60,45 @@
     }
   }
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      width: 100%;
+      min-height: 0px;
+    }
+
+    .card-right {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .card-right {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 300px) {
     flex-direction: column;
     width: 100%;
