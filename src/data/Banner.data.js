@@ -1,8 +1,8 @@
-import banner1 from '../assets/slider/banner-1.png';
+import banner1 from '../assets/slider/banner-1.webp';
 import banner2 from '../assets/slider/banner-2.webp';
-import banner3 from '../assets/slider/banner-3.png';
-import banner4 from '../assets/slider/banner-4.jpeg';
-import banner5 from '../assets/slider/banner-5.jpeg';
+import banner3 from '../assets/slider/banner-3.webp';
+import banner4 from '../assets/slider/banner-4.webp';
+import banner5 from '../assets/slider/banner-5.webp';
 
 export const slides = [
   {
@@ -22,6 +22,7 @@ export const slides = [
     title2: 'All in one',
     description: 'Schedule your deliveries, collection, even get tips & tricks for packing & shipping.',
     backgroundImage: banner3,
+    downloadApp: true,
   },
   {
     title: 'Safe, Secure, Simple',

@@ -1,6 +1,8 @@
 .banner-card {
+  display: flex;
   margin-top: 5%;
   margin-left: 10%;
+  margin-right: 10%;
   padding: 10px;
   border-radius: 15px;
   transition: transform 350ms ease-in-out;
@@ -12,14 +14,94 @@
 
   p {
     font-size: 20px;
-    width: 35%;
+    width: 60%;
+    min-height: 82px;
   }
 
   .banner-card-btn {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 50px;
+    margin-top: 30px;
+  }
+
+  .card-left {
+    flex-grow: 1;
+  }
+
+  .card-right {
+    padding-top: 65px;
+    text-align: center;
+
+    p {
+      width: 100%;
+      margin: 30px 0;
+      font-size: 18px;
+    }
+
+    .download-icons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 30px;
+
+      img {
+        width: 100%;
+        object-fit: scale-down;
+      }
+
+      .mobile-support-button {
+        img {
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+
+      .mobile-support-qr {
+        img {
+          height: 120px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      width: 100%;
+      min-height: 0px;
+    }
+
+    .card-right {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .card-right {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 300px) {

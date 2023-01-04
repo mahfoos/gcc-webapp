@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSlide((slide) => (slide === lenOfSlides ? (slide = 0) : slide + 1));
-    }, 4000);
+    }, 15000);
     return () => clearTimeout(timer);
   }, [slide, lenOfSlides]);
 
