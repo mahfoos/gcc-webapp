@@ -44,29 +44,19 @@
       button {
         padding: 15px 50px;
       }
-      
+
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 576px) {
     .request-pick-form {
+      display: inline;
+
       .request-pick-up-input {
         min-width: 200px;
         flex-direction: column;
         align-items: flex-start;
       }
-
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-  }
-
-  @media screen and (max-width: 350px) {
-    .request-pick-form {
-      .request-pick-up-input {
-        min-width: 200px;
-      }
-
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
 
@@ -75,5 +65,9 @@
     width: 100%;
     // justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 576px) {
+      display: inline;
+    }
   }
 }

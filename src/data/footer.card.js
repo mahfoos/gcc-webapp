@@ -11,11 +11,12 @@ export const foter_card = [
   {
     src: icon_email,
     title: "Email",
-    subtitle: "admins@vecteezy.com",
+    subtitle: "info@newgccargo.com",
   },
   {
     src: icon_clock,
     title: "Opening hours",
-    subtitle: "Mon-Fri,12:00PM - 10.00PM",
+    subtitle: "Mon-Thu\t10:00AM - 10.00PM",
+    subtitle2: "Sut-Sun\t\t10:00AM - 10.00PM"
   },
 ];

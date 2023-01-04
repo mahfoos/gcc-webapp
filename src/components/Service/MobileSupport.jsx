@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ScrollTrigger from 'react-scroll-trigger';
 import Mobile from "../../assets/download.png";
 import QR from "../../assets/sampleqr.png";
-import AppStore from "../../assets/app-store.png";
-import PlayStore from "../../assets/get-it-on-google-play-badge.png";
+import AppStore from "../../assets/app-store.webp";
+import PlayStore from "../../assets/get-it-on-google-play-badge.webp";
 import "./MobileSupport.style.scss";
 const MobileSupport = () => {
   const [showMobile, setShowMobile] = useState(false);

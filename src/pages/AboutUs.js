@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import AboutUsImage from '../assets/about-us.jpeg'
+import AboutUsImage from '../assets/about-us.webp'
 import MobileSupport from "../components/Service/MobileSupport";
 import WhyGCCargo from "../components/Service/WhyGCCargo";
 import TransportationSummary from "../components/TrasportationsSummary/TransportationSummary";

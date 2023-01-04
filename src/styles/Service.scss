@@ -12,6 +12,10 @@
 
   .services-first {
     height: calc(100vh - 85px);
+
+    @media screen and (max-width: 1200px) {
+      height: auto;
+    }
   }
 
   .cards {

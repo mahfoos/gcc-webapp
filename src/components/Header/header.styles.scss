@@ -42,7 +42,7 @@ header {
           justify-content: center;
 
           .icon {
-            color: #6e6e6e;
+            color: black;
             transition: transform 250ms ease-in-out;
           }
 
@@ -57,17 +57,19 @@ header {
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    text-align: center;
 
     .header__container {
       flex-direction: column;
+      margin-left: 0px;
+      margin-right: 0px;
 
       .contact-details {
         flex-direction: column;
-        width: 100%;
 
         p {
           font-size: 12px;
-          margin: 10px 0;
+          margin: 2px 0;
           width: 100%;
         }
       }

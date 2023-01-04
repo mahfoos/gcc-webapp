@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/LOGO.png";
+import Logo from "../../assets/LOGO.webp";
 import "../Navbar/NavBar.style.scss";
 import NavLinks from "./NavLinks";
 
