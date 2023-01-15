@@ -1,20 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
 import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import MobileSupport from "../components/Service/MobileSupport";
+import { db } from "../firebase";
 import "../styles/TrackOrder.scss";
 const TrackOrder = () => {
+  const [trackingNumber, setTrackingNumber] = useState("");
+
+  const trackOrder = async (e) => {
+    e.preventDefault();
+    const docRef = doc(db, "pick-up", trackingNumber);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      console.log("No such document!");
+    }
+  }
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 })
   }, [])
 
   return (
     <section className="track-order-container">
-      <form>
+      <form onSubmit={trackOrder}>
         <label>Enter Tracking Number</label>
-        <Input RequestPickUp={true} />
+        <Input RequestPickUp={true} required={true} name="trackingNumber"
+        onchange={(e) => setTrackingNumber(e.target.value)} />
         <Button content="Track" type="primary" />
       </form>
+
       <div className="track">
         <h3>Estimated Delivery by September 15</h3>
 
