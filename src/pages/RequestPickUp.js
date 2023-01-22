@@ -15,6 +15,7 @@ const RequestPickUp = () => {
     cargoType: "DTD",
     movementType: "AIR",
     receiverCountry: "",
+    shippingStatus: "Order Received",
   });
 
   useEffect(() => {
