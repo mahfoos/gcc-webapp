@@ -32,6 +32,7 @@ const TrackOrder = () => {
       }
     } else {
       console.log("No such document!");
+      setClasses(["ready", "ready", "ready", "ready", "ready", "ready"]);
     }
   }
 
