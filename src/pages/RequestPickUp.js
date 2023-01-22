@@ -4,10 +4,13 @@ import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import { requestPickUpInput, countries } from "../data/request-pickup-input";
 import { db } from "../firebase";
+import { requestPickUpValidation } from "../formValidations";
 import "../styles/Request-to-pickup.scss";
 
 const RequestPickUp = () => {
   const collectionRef = collection(db, "pick-up");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
     cargoType: "DTD",
     movementType: "AIR",
@@ -18,22 +21,40 @@ const RequestPickUp = () => {
     window.scrollTo({ top: 0, left: 0 })
   }, [])
 
-  const handleSave = async (e) => {
-    e.preventDefault()
-    // console.log(formData)
-    try {
-      const docRef = await addDoc(collectionRef, formData);
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // form validation
+    setFormErrors(requestPickUpValidation(formData))
+    setIsSubmitted(true);
   }
+
+  useEffect(() => {
+    const handleSave = async () => {
+      try {
+        const docRef = await addDoc(collectionRef, formData);
+        console.log("Document written with ID: ", docRef.id);
+        setIsSubmitted(false);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+        setIsSubmitted(false);
+      }
+    }
+
+    // if there is no error, save the data to firebase
+    if (Object.keys(formErrors).length === 0 && isSubmitted) {
+      handleSave();
+    } else {
+      console.log(formErrors);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formErrors, isSubmitted]);
 
   return (
     <section className="request-pick-up">
       <h2>Submit Your Pick Up Request Here</h2>
 
-      <form onSubmit={handleSave} className="request-pick-form">
+      <form onSubmit={handleSubmit} className="request-pick-form">
         {requestPickUpInput.slice(0, 6).map(({ label, type, id, required, name }) => (
           <div className="request-pick-up-input" key={id}>
             <label>{label}</label>
