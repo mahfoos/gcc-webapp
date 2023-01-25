@@ -7,8 +7,8 @@ import RequestPickUp from "./pages/RequestPickUp";
 
 import TrackOrder from "./pages/TrackOrder";
 import useGaTracker from './useGaTracker'
-import TagManager from 'react-gtm-module';
-import { useEffect } from "react";
+// import TagManager from 'react-gtm-module';
+// import { useEffect } from "react";
 
 const App = () => {
   useGaTracker();
