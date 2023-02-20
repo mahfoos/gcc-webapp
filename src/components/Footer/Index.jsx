@@ -38,7 +38,7 @@ const Footer = () => {
             margin: "10px 0",
           }}
         >
-          Copyright &copy; {date}. All Rights Reserved.Design by Team
+          Copyright &copy; {date}. All Rights Reserved.Design by ClanCode Labs
         </p>
       </div>
     </footer>
