@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import { requestPickUpInput, countries } from "../data/request-pickup-input";
@@ -15,8 +16,10 @@ const RequestPickUp = () => {
     cargoType: "DTD",
     movementType: "AIR",
     receiverCountry: "",
-    shippingStatus: "Order Received",
+    shippingStatus: "Order Requested",
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 })
@@ -26,7 +29,9 @@ const RequestPickUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // form validation
-    setFormErrors(requestPickUpValidation(formData))
+    //setFormErrors(requestPickUpValidation(formData))
+    const errors = requestPickUpValidation(formData);
+    setFormErrors(errors);
     setIsSubmitted(true);
   }
 
@@ -34,8 +39,9 @@ const RequestPickUp = () => {
     const handleSave = async () => {
       try {
         const docRef = await addDoc(collectionRef, formData);
-        console.log("Document written with ID: ", docRef.id);
         setIsSubmitted(false);
+        // On succcess Navigate to Success page
+        navigate(`/Success/${docRef.id}`);
       } catch (e) {
         console.error("Error adding document: ", e);
         setIsSubmitted(false);
@@ -49,7 +55,7 @@ const RequestPickUp = () => {
       console.log(formErrors);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [formErrors, isSubmitted]);
+  }, [ formErrors, isSubmitted, navigate]);
 
   return (
     <section className="request-pick-up">
@@ -57,10 +63,11 @@ const RequestPickUp = () => {
 
       <form onSubmit={handleSubmit} className="request-pick-form">
         {requestPickUpInput.slice(0, 6).map(({ label, type, id, required, name }) => (
-          <div className="request-pick-up-input" key={id}>
+          <div className={`request-pick-up-input ${formErrors[name] ? 'error' : ''}`} key={id}>
             <label>{label}</label>
             <Input RequestPickUp={true} type={type} required={required} name={name}
-              onchange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
+              onchange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })}/>
+              {formErrors[name] && <span className="error-message">{formErrors[name]}</span>}
           </div>
         ))}
 
@@ -99,10 +106,11 @@ const RequestPickUp = () => {
         <div className="request-pick-up-input"></div>
 
         {requestPickUpInput.slice(6, 11).map(({ label, type, id, required, name }) => (
-          <div className="request-pick-up-input" key={id}>
+          <div className={`request-pick-up-input ${formErrors[name] ? 'error' : ''}`} key={id}>
             <label>{label}</label>
             <Input RequestPickUp={true} type={type} required={required} name={name}
               onchange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
+              {formErrors[name] && <span className="error-message">{formErrors[name]}</span>}
           </div>
         ))}
 
@@ -119,11 +127,12 @@ const RequestPickUp = () => {
           </div>
         </div>
 
-        {requestPickUpInput.slice(11).map(({ label, type, id, required, name }) => (
-          <div className="request-pick-up-input" key={id}>
+        {requestPickUpInput.slice(11).map(({ label, type, id, name }) => (
+          <div className={`request-pick-up-input ${formErrors[name] ? 'error' : ''}`} key={id}>
             <label>{label}</label>
-            <Input RequestPickUp={true} type={type} required={required} name={name}
+            <Input RequestPickUp={true} type={type} name={name}
               onchange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
+              {formErrors[name] && <span className="error-message">{formErrors[name]}</span>}
           </div>
         ))}
 

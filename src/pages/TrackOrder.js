@@ -25,7 +25,7 @@ const TrackOrder = () => {
         setClasses(["done", "done", "wip", "ready", "ready", "ready"]);
       } else if (shippingStatus === "LKCustoms") {
         setClasses(["done", "done", "done", "wip", "ready", "ready"]);
-      } else if (shippingStatus === "Colombo") {
+      } else if (shippingStatus === "Out for Deliver") {
         setClasses(["done", "done", "done", "done", "wip", "ready"]);
       } else if (shippingStatus === "Delivered") {
         setClasses(["done", "done", "done", "done", "done", "wip"]);
@@ -66,7 +66,7 @@ const TrackOrder = () => {
             <div className="item">LKCustoms</div>
           </li>
           <li className={classes[4]}>
-            <div className="item">Colombo</div>
+            <div className="item">Out for Deliver</div>
           </li>
           <li className={classes[5]}>
             <div className="item">Delivered</div>

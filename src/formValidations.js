@@ -18,7 +18,7 @@ export const requestPickUpValidation = (formData) => {
     if (!formData.shippersMobileNumber) {
         errors.shippersMobileNumber = "Shippers Mobile Number is required";
     } else if (!phoneNumberRegex.test(formData.shippersMobileNumber)) {
-        errors.shippersMobileNumber = "Shippers Mobile Number is invalid";
+        errors.shippersMobileNumber = "Invalid Phone Number";
     }
 
     // email validation
@@ -42,29 +42,27 @@ export const requestPickUpValidation = (formData) => {
     if (!formData.receiverPhoneNumber1) {
         errors.receiverPhoneNumber1 = "Receiver Phone Number 1 is required";
     } else if (!phoneNumberRegex.test(formData.receiverPhoneNumber1)) {
-        errors.receiverPhoneNumber1 = "Receiver Phone Number 1 is invalid";
+        errors.receiverPhoneNumber1 = "Invalid Phone Number";
     }
 
     // phone number validation
     if (!formData.receiverPhoneNumber2) {
         errors.receiverPhoneNumber2 = "Receiver Phone Number 2 is required";
     } else if (!phoneNumberRegex.test(formData.receiverPhoneNumber2)) {
-        errors.receiverPhoneNumber2 = "Receiver Phone Number 2 is invalid";
+        errors.receiverPhoneNumber2 = "Invalid Phone Number";
     }
 
     if (!formData.receiverAddress) {
         errors.receiverAddress = "Receiver Address is required";
     }
     if (!formData.receiverDistrict) {
-        errors.receiverDistrict = "Receiver District/Province/Region is required";
+        errors.receiverDistrict = "District/Province/Region is required";
     }
 
     // zip code validation
-    if (!formData.receiverZipCode) {
-        errors.receiverZipCode = "Receiver Zip Code is required";
-    } else if (!numberRegex.test(formData.receiverZipCode)) {
-        errors.receiverZipCode = "Receiver Zip Code is invalid";
-    }
+    // if (!numberRegex.test(formData.receiverZipCode)) {
+    //     errors.receiverZipCode = "Invalid Zip Code";
+    // }
 
     return errors;
 }

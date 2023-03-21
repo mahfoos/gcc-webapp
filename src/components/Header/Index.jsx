@@ -13,8 +13,7 @@ const Header = () => {
       <div className="header__container">
         <div className="contact-details">
           <p>
-            Phone: Qatar (5000 41 78 | 5000 41 76) UAE (052 7450 800 , 052 7385
-            800)
+            Phone: Qatar 6005 53 35 | 6005 55 32
           </p>
           <p>E-mail: info@newgccargo.com</p>
         </div>

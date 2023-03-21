@@ -37,7 +37,7 @@ export const requestPickUpInput = [
   {
     id: 6,
     label: "Pick Up Time*",
-    type: "date",
+    type: "datetime-local",
     required: "required",
     name: "pickUpTime",
   },
@@ -79,7 +79,6 @@ export const requestPickUpInput = [
     id: 12,
     label: "Receiver Zip Code*",
     type: "text",
-    required: "required",
     name: "receiverZipCode",
   },
 ];
