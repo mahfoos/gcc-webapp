@@ -66,11 +66,11 @@ const RequestPickUp = () => {
     const handleSave = async () => {
       try {
         const { DateTime, moveType, ...updatedFromData } = formData;
-        //const docRef = await addDoc(collectionRef, formData);
-        console.log(updatedFromData);
+        const docRef = await addDoc(collectionRef, updatedFromData);
+        //console.log(updatedFromData);
         setIsSubmitted(false);
         // On succcess Navigate to Success page
-        //navigate(`/Success/${orderId}`);
+        navigate(`/Success/${orderId}`);
       } catch (e) {
         console.error("Error adding document: ", e);
         setIsSubmitted(false);
