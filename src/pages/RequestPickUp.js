@@ -7,22 +7,33 @@ import { requestPickUpInput, countries } from "../data/request-pickup-input";
 import { db } from "../firebase";
 import { requestPickUpValidation } from "../formValidations";
 import "../styles/Request-to-pickup.scss";
+const moment = require('moment-timezone');
 
 const RequestPickUp = () => {
-  const collectionRef = collection(db, "pick-up");
+  const collectionRef = collection(db, "req-pick-up");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [cargoType, setCombinedCargoType] = useState("");
+  const [isCombined, setIsCombined] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
-    cargoType: "DTD",
-    movementType: "AIR",
-    receiverCountry: "",
-    shippingStatus: "Order Requested",
+    cargoType: "AIR DTD",
+    destinationCountry: "",
+    status: "requested",
+    collabs: {
+        role:0
+    },
+    orderCreatedTime: moment().tz('Asia/Qatar').toDate(),
+    originCountry: "Qatar",
+    //pickUpTime: null
   });
 
+  const [orderId, setInvoiceNumber] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 })
+    const date = moment().tz('Asia/Qatar').format('YYYYMMDDHHmmss');
+    setInvoiceNumber(`${date}`);
   }, [])
 
 
@@ -33,15 +44,33 @@ const RequestPickUp = () => {
     const errors = requestPickUpValidation(formData);
     setFormErrors(errors);
     setIsSubmitted(true);
+    if (!isCombined) {
+      const newCombinedCargoType = `${formData.moveType} ${formData.carType}`;
+      setCombinedCargoType(newCombinedCargoType);
+      setIsCombined(true);
+      setFormData({ 
+        ...formData, 
+        orderId, 
+        cargoType: newCombinedCargoType,
+        pickupTime: formData.DateTime.split('T')[1],
+        pickupDate: formData.DateTime.split('T')[0]
+      });
+    } 
+    else {
+      setCombinedCargoType("");
+      setIsCombined(false);
+    }
   }
 
   useEffect(() => {
     const handleSave = async () => {
       try {
-        const docRef = await addDoc(collectionRef, formData);
+        const { DateTime, moveType, ...updatedFromData } = formData;
+        //const docRef = await addDoc(collectionRef, formData);
+        console.log(updatedFromData);
         setIsSubmitted(false);
         // On succcess Navigate to Success page
-        navigate(`/Success/${docRef.id}`);
+        //navigate(`/Success/${orderId}`);
       } catch (e) {
         console.error("Error adding document: ", e);
         setIsSubmitted(false);
@@ -54,7 +83,7 @@ const RequestPickUp = () => {
     } else {
       console.log(formErrors);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ formErrors, isSubmitted, navigate]);
 
   return (
@@ -76,12 +105,12 @@ const RequestPickUp = () => {
             <label>Cargo Type/Movement Type*</label>
             <div className="togglebody">
               <div className="toggle">
-                <input id="toggle-on" className="toggle toggle-left" name="movementType" type="radio"
-                  value="AIR" checked={formData.movementType === "AIR"}
+                <input id="toggle-on" className="toggle toggle-left" name="moveType" type="radio"
+                  value="AIR" checked={formData.moveType === "AIR"}
                   onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
                 <label htmlFor="toggle-on" className="toggle-btn">AIR</label>
-                <input id="toggle-off" className="toggle toggle-right" name="movementType" type="radio"
-                  value="SEA" checked={formData.movementType === "SEA"}
+                <input id="toggle-off" className="toggle toggle-right" name="moveType" type="radio"
+                  value="SEA" checked={formData.moveType === "SEA"}
                   onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
                 <label htmlFor="toggle-off" className="toggle-btn">SEA</label>
               </div>
@@ -90,12 +119,12 @@ const RequestPickUp = () => {
           <div className="request-pick-up-input">
             <div className="togglebody">
               <div className="toggle">
-                <input id="toggle-on2" className="toggle toggle-left" name="cargoType" type="radio"
-                  value="DTD" checked={formData.cargoType === "DTD"}
+                <input id="toggle-on2" className="toggle toggle-left" name="carType" type="radio"
+                  value="DTD" checked={formData.carType === "DTD"}
                   onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
                 <label htmlFor="toggle-on2" className="toggle-btn">DTD</label>
-                <input id="toggle-off2" className="toggle toggle-right" name="cargoType" type="radio"
-                  value="DT PORT" checked={formData.cargoType === "DT PORT"}
+                <input id="toggle-off2" className="toggle toggle-right" name="carType" type="radio"
+                  value="DT PORT" checked={formData.carType === "DT PORT"}
                   onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
                 <label htmlFor="toggle-off2" className="toggle-btn">DT PORT</label>
               </div>
@@ -117,7 +146,7 @@ const RequestPickUp = () => {
         <div className="request-pick-up-input">
           <label>Receiver Country*</label>
           <div className="select-country">
-            <select name="receiverCountry" id="country" value={formData.receiverCountry}
+            <select name="destinationCountry" id="country" value={formData.destinationCountry}
               onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })}>
               <option value="" disabled>Select receiver country</option>
               {countries.map(({ country }) => (
