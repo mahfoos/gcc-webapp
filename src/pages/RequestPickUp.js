@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import { requestPickUpInput, countries } from "../data/request-pickup-input";
-import { db } from "../firebase";
 import { requestPickUpValidation } from "../formValidations";
 import "../styles/Request-to-pickup.scss";
 const moment = require('moment-timezone');
