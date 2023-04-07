@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
@@ -10,7 +9,6 @@ import "../styles/Request-to-pickup.scss";
 const moment = require('moment-timezone');
 
 const RequestPickUp = () => {
-  const collectionRef = collection(db, "req-pick-up");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [cargoType, setCombinedCargoType] = useState("");
   const [isCombined, setIsCombined] = useState(false);
@@ -64,17 +62,28 @@ const RequestPickUp = () => {
 
   useEffect(() => {
     const handleSave = async () => {
-      try {
         const { DateTime, moveType, ...updatedFromData } = formData;
-        const docRef = await addDoc(collectionRef, updatedFromData);
-        //console.log(updatedFromData);
-        setIsSubmitted(false);
+
+        const functionUrl = "https://us-central1-gcc-webapp-4db80.cloudfunctions.net/createOrder";
+        const response = await fetch(functionUrl, {
+          method: "POST",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(updatedFromData)
+        });
+
         // On succcess Navigate to Success page
-        navigate(`/Success/${orderId}`);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-        setIsSubmitted(false);
-      }
+        if (response.ok) {
+          setIsSubmitted(false);
+          // On succcess Navigate to Success page
+          navigate(`/Success/${orderId}`);
+        }
+        else {
+          console.error("Error adding document: ", response.status);
+          setIsSubmitted(false);
+        }
     }
 
     // if there is no error, save the data to firebase

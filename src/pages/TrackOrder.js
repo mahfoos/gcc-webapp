@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { collection, query, where, getDocs } from "firebase/firestore";
 import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import MobileSupport from "../components/Service/MobileSupport";
-import { db } from "../firebase";
 import "../styles/TrackOrder.scss";
 
 const TrackOrder = () => {
@@ -12,13 +10,21 @@ const TrackOrder = () => {
   const [estimatedDelivery, setEstimatedDelivery] = useState("");
 
   const trackOrder = async (e) => {
-    console.log(trackingNumber);
     e.preventDefault();
-    const q = query(collection(db, "req-pick-up"), where("orderId", "==", `${trackingNumber}`));
-    const querySnapshot = await getDocs(q);
-    if (querySnapshot.docs.length > 0) {
-      const docSnap = querySnapshot.docs[0];
-      const { status } = docSnap.data();
+    try {
+      const response = await fetch('https://us-central1-gcc-webapp-4db80.cloudfunctions.net/getOrderStatus', {
+        method: 'POST',
+        mode: "cors",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          orderId: trackingNumber
+        })
+      });
+      console.log(response);
+      const data = await response.json();
+      const status = data.status;
       if (status === "collected") {
         setClasses(["wip", "ready", "ready", "ready", "ready", "ready"]);
       } else if (status === "ware-house-in") {
@@ -32,29 +38,28 @@ const TrackOrder = () => {
       } else if (status === "Delivered") {
         setClasses(["done", "done", "done", "done", "done", "wip"]);
       }
-    } else {
-      console.log("No such document!");
-      setClasses(["ready", "ready", "ready", "ready", "ready", "ready"]);
+    } catch (error) {
+      console.error(error);
     }
   }
 
-  useEffect(() => {
-    //window.scrollTo({ top: 0, left: 0 })
-    const searchParams = new URLSearchParams(window.location.search);
-    const queryTrackingNumber = searchParams.get("trackingNumber");
+  // useEffect(() => {
+  //   //window.scrollTo({ top: 0, left: 0 })
+  //   const searchParams = new URLSearchParams(window.location.search);
+  //   const queryTrackingNumber = searchParams.get("trackingNumber");
 
-    if (queryTrackingNumber) {
-      setTrackingNumber(queryTrackingNumber);
-      //trackOrder({ preventDefault: () => {} }); // Manually trigger the track order function
-      //console.log(trackingNumber);
-    }
-  }, [])
+  //   if (queryTrackingNumber) {
+  //     setTrackingNumber(queryTrackingNumber);
+  //     //trackOrder({ preventDefault: () => {} }); // Manually trigger the track order function
+  //     //console.log(trackingNumber);
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    if (trackingNumber) {
-      trackOrder({ preventDefault: () => {} }); // Manually trigger the track order function
-    }
-  }, [trackingNumber]);
+  // useEffect(() => {
+  //   if (trackingNumber) {
+  //     trackOrder({ preventDefault: () => {} }); // Manually trigger the track order function
+  //   }
+  // }, [trackingNumber]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
