@@ -18,7 +18,7 @@ exports.createOrder = functions.https.onRequest(async (req, res) => {
         // await admin.database().ref('pick-up').push(data);
 
         const firestore = admin.firestore();
-        const docRef = await firestore.collection('pick-up').add(data);
+        const docRef = await firestore.collection('req-pick-up').add(data);
 
         // Respond with a success message
         res.status(200).send('ok');

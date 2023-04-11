@@ -3,14 +3,16 @@ import Button from "../components/Button/Index";
 import Input from "../components/Input/Index";
 import MobileSupport from "../components/Service/MobileSupport";
 import "../styles/TrackOrder.scss";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const TrackOrder = () => {
   const [trackingNumber, setTrackingNumber] = useState("");
   const [classes, setClasses] = useState(["ready", "ready", "ready", "ready", "ready", "ready"]);
   const [estimatedDelivery, setEstimatedDelivery] = useState("");
+  const [location] = useSearchParams();
 
   const trackOrder = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     try {
       const response = await fetch('https://us-central1-gcc-webapp-4db80.cloudfunctions.net/getOrderStatus', {
         method: 'POST',
@@ -19,7 +21,7 @@ const TrackOrder = () => {
           "content-type": "application/json",
         },
         body: JSON.stringify({
-          orderId: trackingNumber
+          orderId: location.get('trackingNumber') || trackingNumber
         })
       });
       console.log(response);
@@ -43,26 +45,9 @@ const TrackOrder = () => {
     }
   }
 
-  // useEffect(() => {
-  //   //window.scrollTo({ top: 0, left: 0 })
-  //   const searchParams = new URLSearchParams(window.location.search);
-  //   const queryTrackingNumber = searchParams.get("trackingNumber");
-
-  //   if (queryTrackingNumber) {
-  //     setTrackingNumber(queryTrackingNumber);
-  //     //trackOrder({ preventDefault: () => {} }); // Manually trigger the track order function
-  //     //console.log(trackingNumber);
-  //   }
-  // }, [])
-
-  // useEffect(() => {
-  //   if (trackingNumber) {
-  //     trackOrder({ preventDefault: () => {} }); // Manually trigger the track order function
-  //   }
-  // }, [trackingNumber]);
-
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
+    trackOrder()
   }, []);
 
   return (
