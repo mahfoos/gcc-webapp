@@ -3,6 +3,10 @@
 
 @import "../styles/global.scss";
 
+$request-pickup-primary-color: #007bff;
+$request-pickup-secondary-color: #6c757d;
+$request-pickup-error-color: #dc3545;
+
 .request-pick-up {
   @include pageSize();
 
@@ -20,14 +24,36 @@
       min-width: 300px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-
       label {
         margin-right: 10px;
         margin-left: 15px;
         font-size: 12px;
         flex: 0.3;
       }
+      position: relative;
+
+      &.error {
+        input,
+        select {
+          border-color: $request-pickup-error-color;
+        }
+        .error-message {
+          color: $request-pickup-error-color;
+          font-size: 12px;
+          position: absolute;
+          bottom: -12px;
+          margin-left: 138px;      
+
+          @media screen and (max-width: 576px) {
+            display: inline;
+            position: initial;
+            margin-top: -8px;
+            margin-bottom: 4px;
+            margin-left: 13px;     
+          }
+        }
+      }
+
 
       textarea {
         @include input($color-sky-blue, $input-background);
@@ -63,7 +89,6 @@
   .cargo-type-select {
     display: flex;
     width: 100%;
-    // justify-content: center;
     align-items: center;
 
     @media screen and (max-width: 576px) {

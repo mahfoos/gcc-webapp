@@ -4,6 +4,7 @@ import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import MainLayOut from "./pages/MainLayOut";
 import RequestPickUp from "./pages/RequestPickUp";
+import SuccessPage from "./pages/Success";
 
 import TrackOrder from "./pages/TrackOrder";
 
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="request-pickup" element={<RequestPickUp />} />
           <Route path="track-order" element={<TrackOrder />} />
+          <Route path="Success/:docId" element={<SuccessPage />} />
         </Route>
       </Routes>
     </React.Fragment>

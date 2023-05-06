@@ -22,7 +22,7 @@ const Footer = () => {
           <article className="about-us">
             <h4>About Us</h4>
             <p>
-              GC Cargo is the best cargo service provider in Qatar. Specializing in door-to-door, doot-to-port delivery with online tracking and online booking platform. GC Cargo functions with the highest confidence and provide a reliable, efficient and low-cost cargo services to both individuals and corporates.
+              GC Cargo is the best cargo service provider in Qatar. Specializing in door-to-door, door-to-port delivery with online tracking and online booking platform. GC Cargo functions with the highest confidence and provide a reliable, efficient and low-cost cargo services to both individuals and corporates.
             </p>
           </article>
           <article className="about-us">

@@ -9,7 +9,7 @@ export const services = [
   {
     // logo: "https://qexcargo.com/wp-content/uploads/2019/01/services-icon-2.png",
     logo: { img: icon2 },
-    title: "Air Door to Air Door",
+    title: "Air Door to Door",
     description:
       "We provide Air Door-to-Door cargo arrangement where your goods is picked up at the door and delivered to the recipient's door at the promised time",
   },

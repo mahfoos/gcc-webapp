@@ -6,7 +6,7 @@ export const foter_card = [
   {
     src: icon_phone,
     title: "Phone",
-    subtitle: "Qatar : 0743233424",
+    subtitle: "Qatar : 6005 53 35 | 6005 55 32",
   },
   {
     src: icon_email,
